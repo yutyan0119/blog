@@ -69,6 +69,7 @@ fn main() {
 
 $$ \sum_{i=1}^n a_i=0 $$
 
+こちらもインライン可 $ a + b = c $
 ## 画像表示
 ![hoge](/assets/images/favicon/mylogo.png){: align="center" width="150px" height="150px"}
 
