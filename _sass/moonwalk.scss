@@ -218,3 +218,7 @@ p code, li code {
   text-transform: lowercase;
   //border: 1px solid var(--text-secondary);
 }
+
+.footnotes {
+  overflow-wrap: break-word;
+}
