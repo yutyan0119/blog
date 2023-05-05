@@ -1,9 +1,10 @@
 ---
 layout: post
 author: Yuto Nakamura
-tags: [overview, メモ]
+tags: [メモ]
 description: 
 ogp_img: /assets/images/favicon/mylogo.png
+latex: true
 ---
 
 ここに説明書きを書くことが出来る。上のdescriptionを書いていないときは、こちらの文章がOGPに表示される。脚注を書くことが出来る。[^1]
