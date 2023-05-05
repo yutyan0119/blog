@@ -1,6 +1,6 @@
 navbar_entries:
   - title: home
-    url: /blog
+    url: /
   - title: about
     url: about
   - title: posts
