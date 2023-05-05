@@ -7,7 +7,6 @@ ogp_img:
 title: SHA3をRustで実装した
 latex: true
 date: 2023-05-06
-published: true
 ---
 
 SHA3をRustで実装しました。といっても、SHA3が実装したくて実装したわけではなく、Crystals-Kyberと呼ばれる最新の暗号方式を実装するために、SHA3を実装する必要があったので実装したまでです。今回実装した、SHA3の実装は、[このリポジトリ](https://github.com/yutyan0119/Kyber-rs)に含まれています。具体的には[`src/sha3.rs`](https://github.com/yutyan0119/Kyber-rs/blob/main/src/sha3.rs)にほとんどの実装があります。
