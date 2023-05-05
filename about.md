@@ -4,7 +4,7 @@ title: About
 ---
 
 ## ゆーちゃん/[@yutyan_ut](https://twitter.com/yutyan_ut)
-![自分の絵](mylogo.png){: align="center" width="150px" height="150px"}
+![自分の絵](/assets/images/favicon/mylogo.png){: align="center" width="150px" height="150px"}
 
 ## Profile
 - 2001/01/19大阪生まれ
