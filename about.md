@@ -1,6 +1,7 @@
 ---
 layout: post
 title: About
+description: About me
 ---
 
 ## ゆーちゃん/[@yutyan_ut](https://twitter.com/yutyan_ut)
