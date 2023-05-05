@@ -1,67 +1,50 @@
 navbar_entries:
+  - title: home
+    url: /
   - title: about
     url: about
-
   - title: blog
     url: blog
-
-  - title: website
-    url: https://www.abhinav.co
+  - title: tags
+    url: tags
 
 project_entries:
-  - title: Project 1
-    url: overview-post
-    desc: This is an example project, configured in _data/home.yml
+  - title: rv32I-TangNano9K
+    url: https://github.com/yutyan0119/rv32I-TangNano9K
+    desc: TangNano9K上にRISC-V（RV32I）を実装したもの
 
-  - title: Project 2
-    url: overview-post
-    desc: Projects are shown in card layout
+  - title: Jinshin-visualization
+    url: https://yutyan0119.github.io/Jinshin-visualization/
+    desc: 情報可視化実験にて作成した人身事故の可視化サイト
 
-  - title: Project 3
-    url: overview-post
-    desc: You can control visibility from _config.yml file
+  - title: website
+    url: https://yutyan.net
+    desc: 昔に作成したホームページ的なやつ。ラズパイで稼働中（メンテ状態）
 
-  - title: Project 4
-    url: overview-post
-    desc: This project uses highlight markup, configured in _data/home.yml
+  - title: V4L2-createimage-rs
+    url: https://github.com/yutyan0119/V4L2-createimage-rs
+    desc: Rustで作成したV4L2で画像を取得するプログラム
+    highlight: NEW!
+
+  - title: Zenn
+    url: https://zenn.dev/yutyan
+    desc: Zennには技術関連の記事を投稿しています
+
+  - title: Kyber-rs
+    url: https://github.com/yutyan0119/Kyber-rs
+    desc: Crystals-KyberをRustで実装中
     highlight: WIP
 
-  - title: Project 5
-    url: overview-post
-    desc: Moonwalk also has horizontal list (used in header and footer)
-    highlight: WIP
-
-  - title: Project 6
-    url: overview-post
-    desc: It also has a scalable vertical list (in case you need it)
-
-old_project_entries:
-  - title: Soopr
-    url: https://www.soopr.co
-    desc: Delight your readers - add beautiful share and like buttons easily to your websites 
-    highlight: NEW
-
-  - title: Cookie
-    url: https://github.com/abhinavs/cookie
-    desc: An open source landing website with supporting pages and integrated blog
-
-  - title: Moonwalk
-    url: https://github.com/abhinavs/moonwalk
-    desc: A fast and minimalist Jekyll blog theme with clean dark mode
-
-  - title: Humangous
-    url: https://www.humangous.co
-    desc: The better people know you, the better they collaborate
 
 footer_entries:
-  - title: abhinav's homepage
-    url: https://www.abhinav.co
+  - title: yutyan's homepage
+    url: https://yutyan.net
 
   - title: twitter
-    url: https://twitter.com/abhinav
+    url: https://twitter.com/yutyan_ut
 
   - title: github
-    url: https://github.com/abhinavs
+    url: https://github.com/yutyan0119
 
   - title: feed
     url: feed.xml
