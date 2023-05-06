@@ -100,7 +100,7 @@ let v_metrics = font.v_metrics(scale);
 let text_height = v_metrics.ascent - v_metrics.descent + v_metrics.line_gap;
 ```
 
-これでひとまずコンパイルは通ったが、文字が正しく描画されない。仕方ないので少し調べたところ、`imageproc::drawing::draw_text_mut`がうまくいきそうなので、それにコードを変更したところうまくいった。ので、これを伝えておく。
+これでひとまずコンパイルは通ったが、文字が正しく描画されない。仕方ないので少し調べたところ、`imageproc::drawing::draw_text_mut`[^1]がうまくいきそうなので、それにコードを変更したところうまくいった。ので、これを伝えておく。
 
 次に、textの左端がx = 285, 右恥が x = 915になるように伝えた。
 すると下のようにテキスト幅を計算して、適切なスケールに文字を変換してくれるようになった。凄い。
@@ -233,3 +233,4 @@ if min_scale < scale.x {
 
 ---
 {: data-content="footnotes"}
+[^1][Rustで画像に文字を描画する, https://zenn.dev/corocn/articles/69a6735c10ce4f](https://zenn.dev/corocn/articles/69a6735c10ce4f)
