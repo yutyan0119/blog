@@ -6,7 +6,7 @@ description:
 ogp_img: /assets/images/ogp_image/OGP画像をいい感じでつくってくれるアプリをRustで作った.png
 title: OGP画像をいい感じでつくってくれるアプリをRustで作った With ChatGPT
 latex: true
-date: 2023-05-06 03:00:00 +0900
+date: 2023-05-06 18:00:00 +0900
 ---
 
 ブログを作ったらそれを共有したくなるもの。RustでOGP画像をパッと生成してくれるアプリを作ったので紹介します。ちなみにほとんどChatGPT(GPT-4)に任せました。凄い。
