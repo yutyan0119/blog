@@ -2,6 +2,8 @@ name: OGP Image Generator
 
 on:
   push:
+    branches:
+      - master
     paths:
       - '_posts/**/*.md'
       - '.github/scripts/ogp_image_gen.py'
