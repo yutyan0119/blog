@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Yuto Nakamura
-tags: [crypto]
+tags: [crypt, Rust]
 description: 
 ogp_img: /assets/images/ogp_image/RustでSHA3を実装した.png
 title: SHA3をRustで実装した
