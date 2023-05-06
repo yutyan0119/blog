@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - '_posts/**/*.md'
+      - '.github/scripts/ogp_image_gen.py'
+      - '.github/workflows/ogp_image_gen.yml'
 
 jobs:
   generate_ogp_image:
@@ -19,7 +21,7 @@ jobs:
         python-version: 3.8
 
     - name: Generate OGP Image and Update Markdown
-      run: python .github/scripts/ogp_image_generator.py
+      run: python .github/scripts/ogp_gen.py
 
     - name: Commit and push changes
       run: |
