@@ -9,7 +9,7 @@ latex: true
 date: 2023-05-06 18:00:00 +0900
 ---
 
-ブログを作ったらそれを共有したくなるもの。RustでOGP画像をパッと生成してくれるアプリを作ったので紹介します。ちなみにほとんどChatGPT(GPT-4)に任せました。凄い。
+ブログを作ったらそれを共有したくなるもの。RustでOGP画像をパッと生成してくれるアプリを作ったので紹介します。ちなみにほとんどChatGPT(GPT-4)に任せました。凄い。あと最後にはGitHub Actionsで自動的にこれを実行し、ブログに反映します。
 
 ## 目標
 はてなブログのこんなやつとか
@@ -225,6 +225,106 @@ if min_scale < scale.x {
 
 あとはこれのバイナリを生成して、このブログのリポジトリにもコピーしておいたので、投稿前にこれを実行するだけで良い。
 
+## GitHub Actionsで自動化する
+まず、markdownから、titleを取得して、それに合わせて`opg-creater`を実行するようなPythonを書く。なぜPythonかというと、GitHub Actionsでシェルスクリプトの次に実行しやすいため。ちなみに、これもChatGPTの手を借りた。正規表現はChatGPTの大の得意分野です。
+
+```python
+import os
+import re
+import subprocess
+from pathlib import Path
+
+POSTS_PATH = "_posts"
+OGP_IMAGES_PATH = "assets/images/ogp_image"
+MD_PATTERN = r"^---\n(?:.*\n)*?title:\s*(.*?)\n(?:.*\n)*?---"
+
+def generate_ogp_image(title):
+    # OGP画像を生成するコマンドを実行
+    ogp_creater_path = os.path.abspath(OGP_IMAGES_PATH + "/ogp-creater")
+    subprocess.run([ogp_creater_path, title], cwd=OGP_IMAGES_PATH)
+
+    # 生成されたOGP画像のパスを返す
+    return f"{OGP_IMAGES_PATH}/{title}.png"
+
+def update_md_file(file_path, ogp_image_path):
+    with open(file_path, "r") as md_file:
+        content = md_file.read()
+
+    # 既存のOGP画像パスを検索
+    ogp_img_pattern = r"ogp_img:(.*)"
+    existing_ogp_img = re.search(ogp_img_pattern, content)
+
+    # 既存のOGP画像パスがあれば更新、なければ追加
+    if existing_ogp_img:
+        content = re.sub(ogp_img_pattern, f"ogp_img: {ogp_image_path}", content)
+    else:
+        content = content.replace("---", f"---\nogp_img: {ogp_image_path}", 1)
+
+    with open(file_path, "w") as md_file:
+        md_file.write(content)
+
+def main():
+    md_files = list(Path(POSTS_PATH).rglob("*.md"))
+    
+    for md_file in md_files:
+        with open(md_file, "r") as file:
+            content = file.read()
+
+        title_match = re.search(MD_PATTERN, content)
+        if title_match:
+            title = title_match.group(1)
+            # OGP画像を生成
+            print(title)
+            ogp_image_path = generate_ogp_image(title)
+            ogp_image_path = "/" + ogp_image_path
+            print(ogp_image_path)
+            # # 記事のMarkdownファイルを更新
+            update_md_file(md_file, ogp_image_path)
+
+if __name__ == "__main__":
+    main()
+```
+
+あとは、これを実行するようなworkflowを書く。
+
+```yaml
+name: OGP Image Generator
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '_posts/**/*.md'
+      - '.github/scripts/ogp_image_gen.py'
+      - '.github/workflows/ogp_image_gen.yml'
+
+jobs:
+  generate_ogp_image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Generate OGP Image and Update Markdown
+      run: python .github/scripts/ogp_gen.py
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "78634880+yutyan0119@users.noreply.github.com"
+        git config --local user.name "yutyan0119"
+        git add .
+        git diff --quiet && git diff --staged --quiet || git commit -m "Automatically generated OGP images"
+        git push
+```
+
+リポジトリの設定でActionsに書き込み権限を持たせておくと、Actions内での変更点をコミット/pushしてくれる。
 
 ## まとめ
 最終的にはやっぱGitHub Actionsで自動化したいよね～と思いながら、GitHub Actionsでバイナリを実行して、それをpushして、markdown冒頭の`ogp_img`という値を書き換えかえた上で、githubに再度pushしないといけないので、一旦後回し。

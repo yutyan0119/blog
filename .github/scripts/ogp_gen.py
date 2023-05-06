@@ -11,8 +11,6 @@ def generate_ogp_image(title):
     # OGP画像を生成するコマンドを実行
     ogp_creater_path = os.path.abspath(OGP_IMAGES_PATH + "/ogp-creater")
     subprocess.run([ogp_creater_path, title], cwd=OGP_IMAGES_PATH)
-    # /home/yuto/blog/assets/images/ogp_image/ogp-creater
-    # subprocess.run([ogp_creater_path, title], cwd=OGP_IMAGES_PATH)
 
     # 生成されたOGP画像のパスを返す
     return f"{OGP_IMAGES_PATH}/{title}.png"
