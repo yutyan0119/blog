@@ -8,12 +8,13 @@ OGP_IMAGES_PATH = "assets/images/ogp_image"
 MD_PATTERN = r"^---\n(?:.*\n)*?title:\s*(.*?)\n(?:.*\n)*?---"
 
 def generate_ogp_image(title):
+    sanitized_title = title.replace(" ", "-")
     # OGP画像を生成するコマンドを実行
     ogp_creater_path = os.path.abspath(OGP_IMAGES_PATH + "/ogp-creater")
-    subprocess.run([ogp_creater_path, title], cwd=OGP_IMAGES_PATH)
+    subprocess.run([ogp_creater_path, sanitized_title], cwd=OGP_IMAGES_PATH)
 
     # 生成されたOGP画像のパスを返す
-    return f"{OGP_IMAGES_PATH}/{title}.png"
+    return f"{OGP_IMAGES_PATH}/{sanitized_title}.png"
 
 def update_md_file(file_path, ogp_image_path):
     with open(file_path, "r") as md_file:

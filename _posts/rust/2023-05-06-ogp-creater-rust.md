@@ -332,4 +332,5 @@ jobs:
 
 ---
 {: data-content="footnotes"}
-[^1][Rustで画像に文字を描画する, https://zenn.dev/corocn/articles/69a6735c10ce4f](https://zenn.dev/corocn/articles/69a6735c10ce4f)
+
+[^1]: [Rustで画像に文字を描画する, https://zenn.dev/corocn/articles/69a6735c10ce4f](https://zenn.dev/corocn/articles/69a6735c10ce4f)
