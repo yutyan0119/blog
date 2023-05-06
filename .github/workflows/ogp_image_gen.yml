@@ -6,7 +6,7 @@ on:
       - master
     paths:
       - '_posts/**/*.md'
-      - '.github/scripts/ogp_image_gen.py'
+      - '.github/scripts/ogp_gen.py'
       - '.github/workflows/ogp_image_gen.yml'
 
 jobs:
