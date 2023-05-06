@@ -20,17 +20,16 @@ def update_md_file(file_path, ogp_image_path):
         content = md_file.read()
 
     # 既存のOGP画像パスを検索
-    ogp_img_pattern = r"ogp_img:(.*)"
-    existing_ogp_img = re.search(ogp_img_pattern, content)
+    updated_content = re.sub(
+        r"(^---\n(?:.*\n)*?)ogp_img:.*(\n(?:.*\n)*?---)",
+        rf"\1ogp_img: {ogp_image_path}\2",
+        content,
+        flags=re.MULTILINE
+    )
 
-    # 既存のOGP画像パスがあれば更新、なければ追加
-    if existing_ogp_img:
-        content = re.sub(ogp_img_pattern, f"ogp_img: {ogp_image_path}", content)
-    else:
-        content = content.replace("---", f"---\nogp_img: {ogp_image_path}", 1)
-
-    with open(file_path, "w") as md_file:
-        md_file.write(content)
+    if content != updated_content:
+        with open(file_path, "w") as file:
+            file.write(updated_content)
 
 def main():
     md_files = list(Path(POSTS_PATH).rglob("*.md"))
