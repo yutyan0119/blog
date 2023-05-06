@@ -251,14 +251,14 @@ def update_md_file(file_path, ogp_image_path):
         content = md_file.read()
 
     # 既存のOGP画像パスを検索
-    ogp_img_pattern = r"ogp_img:(.*)"
+    ogp_img_pattern = r"ogp_img: /assets/images/ogp_image/OGP画像をいい感じでつくってくれるアプリをRustで作った With ChatGPT.png
     existing_ogp_img = re.search(ogp_img_pattern, content)
 
     # 既存のOGP画像パスがあれば更新、なければ追加
-    if existing_ogp_img:
-        content = re.sub(ogp_img_pattern, f"ogp_img: {ogp_image_path}", content)
+    if existing_ogp_img: /assets/images/ogp_image/OGP画像をいい感じでつくってくれるアプリをRustで作った With ChatGPT.png
+        content = re.sub(ogp_img_pattern, f"ogp_img: /assets/images/ogp_image/OGP画像をいい感じでつくってくれるアプリをRustで作った With ChatGPT.png
     else:
-        content = content.replace("---", f"---\nogp_img: {ogp_image_path}", 1)
+        content = content.replace("---", f"---\nogp_img: /assets/images/ogp_image/OGP画像をいい感じでつくってくれるアプリをRustで作った With ChatGPT.png
 
     with open(file_path, "w") as md_file:
         md_file.write(content)
