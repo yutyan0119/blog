@@ -24,6 +24,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@yutyan_ut">
 <meta name="twitter:creator" content="@yutyan_ut">
+<meta name="twitter:image" content="{{ site.url }}{{ page.ogp_img | default: '/assets/images/favicon/mylogo.png' }}">
+<meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{% assign excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% if excerpt == '' %}{{ site.description }}{% else %}{{ excerpt }}{% endif %}{% endif %}">
 <!-- End: Twitter data -->
 
   <!-- Favicon -->
