@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [crypto]
 description: 
-ogp_img:
+ogp_img: /assets/images/ogp_image/RustでSHA3を実装した.png
 title: SHA3をRustで実装した
 latex: true
 date: 2023-05-06 03:00:00 +0900
