@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [Blog, サイボウズ・ラボユース, 自作OS, RISC-V, FPGA]
 description: 
-ogp_img:
+ogp_img: /assets/images/ogp_image/サイボウズ・ラボユースに採択されました.png
 title: サイボウズ・ラボユースに採択されました
 latex: false
 date: 2023-05-31 00:00:00 +0900
