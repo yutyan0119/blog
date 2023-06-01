@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [サイボウズ・ラボユース, 自作OS, RISC-V]
 description: 
-ogp_img:
+ogp_img: /assets/images/ogp_image/riscv-gnu-toolchainをビルドした.png
 title: riscv-gnu-toolchainをビルドした
 latex: false
 date: 2023-05-31 23:55:00 +0900
