@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [自作OS, RISC-V]
 description: 
-ogp_img:
+ogp_img: /assets/images/ogp_image/QEMUをビルドしてHinaOSを動かした.png
 title: QEMUをビルドしてHinaOSを動かした
 latex: false
 date: 2023-05-31 23:55:00 +0900
