@@ -3,10 +3,10 @@ layout: post
 author: Yuto Nakamura
 tags: [自作OS, RISC-V]
 description: 
-ogp_img:
+ogp_img: /assets/images/ogp_image/QEMUをビルドしてHinaOSを動かした.png
 title: QEMUをビルドしてHinaOSを動かした
 latex: false
-date: 2023-05-31 23:55:00 +0900
+date: 2023-06-01 22:35:00 +0900
 ---
 
 今回は、QEMUをビルドして、他の人の自作OSを実行してみようというものです。少しだけ躓くポイントがあるので、解消ポイントも書いておきます。RISC-V対応OSを自作しようと思っていたら、どストライクな本が発売されていました。[『自作OSで学ぶマイクロカーネルの設計と実装』(秀和システム、ISBN: 978-4-7980-6871-8)](https://www.hanmoto.com/bd/isbn/9784798068718)で紹介されている[HinaOS](https://github.com/nuta/microkernel-book)は、教育向けマイクロカーネルOSです。RISC-Vに対応しており、マルチコア対応やファイルシステムの実装などが特徴です。自分のRISC-V対応OSにもかなり参考になるものと思っています。参考にするにはまず動かしてどんなことが出来るのか見てみようということで、実際に動かしてみます。実際の本は以下の画像のリンク先から購入できます。とても良い本なので是非。
