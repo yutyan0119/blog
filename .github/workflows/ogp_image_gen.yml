@@ -24,13 +24,15 @@ jobs:
         repository: yutyan0119/ogp-creater
         path: ./ogp-creater
 
-    - name: Install Rust and build ogp-creater
+    - name: Install Rust
       uses: actions-rs/toolchain@v1
       with:
         toolchain: stable
         override: true
         components: rustfmt
         target: x86_64-unknown-linux-gnu
+
+    - name: Build ogp-creater
       run: |
         cd ./ogp-creater
         cargo build --release
