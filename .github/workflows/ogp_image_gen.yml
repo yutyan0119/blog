@@ -8,6 +8,7 @@ on:
       - '_posts/**/*.md'
       - '.github/scripts/ogp_gen.py'
       - '.github/workflows/ogp_image_gen.yml'
+      - 'assets/images/ogp_image/ogp-creater'
 
 jobs:
   generate_ogp_image:
