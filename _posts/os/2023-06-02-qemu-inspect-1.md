@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [自作OS, RISC-V]
 description: 
-ogp_img: 
+ogp_img: /assets/images/ogp_image/QEMUの起動オプションを調べてみる.png
 title: QEMUの起動オプションを調べてみる
 latex: false
 date: 2023-06-02 20:30:00 +0900

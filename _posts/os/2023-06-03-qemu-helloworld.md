@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [自作OS, RISC-V]
 description: 
-ogp_img: 
+ogp_img: /assets/images/ogp_image/QEMU(RISC-V-virt)でHello-world!.png
 title: QEMU(RISC-V virt)でHello world!
 latex: false
 date: 2023-06-03 12:00:00 +0900
