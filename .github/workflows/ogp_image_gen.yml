@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - master
+      - change_workflow
     paths:
       - '_posts/**/*.md'
       - '.github/scripts/ogp_gen.py'
       - '.github/workflows/ogp_image_gen.yml'
-      - 'assets/images/ogp_image/ogp-creater'
 
 jobs:
   generate_ogp_image:
@@ -17,6 +17,25 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Checkout ogp-creater repository
+      uses: actions/checkout@v2
+      with:
+        repository: yutyan0119/ogp-creater
+        path: ./ogp-creater
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        components: rustfmt
+        target: x86_64-unknown-linux-gnu
+
+    - name: Build ogp-creater
+      run: |
+        cd ./ogp-creater
+        cargo build --release
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -30,6 +49,6 @@ jobs:
       run: |
         git config --local user.email "78634880+yutyan0119@users.noreply.github.com"
         git config --local user.name "yutyan0119"
-        git add .
+        git add assets/images/ogp_image/*
         git diff --quiet && git diff --staged --quiet || git commit -m "Automatically generated OGP images"
         git push
