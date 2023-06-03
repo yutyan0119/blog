@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - master
+      - change_workflow
     paths:
       - '_posts/**/*.md'
       - '.github/scripts/ogp_gen.py'
       - '.github/workflows/ogp_image_gen.yml'
-      - 'assets/images/ogp_image/ogp-creater'
 
 jobs:
   generate_ogp_image:
@@ -17,6 +17,23 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Checkout ogp-creater repository
+      uses: actions/checkout@v2
+      with:
+        repository: yutyan0119/ogp-creater
+        path: ./ogp-creater
+
+    - name: Install Rust and build ogp-creater
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        components: rustfmt
+        target: x86_64-unknown-linux-gnu
+      run: |
+        cd ./ogp-creater
+        cargo build --release
 
     - name: Set up Python
       uses: actions/setup-python@v2
