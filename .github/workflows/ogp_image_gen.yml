@@ -20,7 +20,7 @@ jobs:
 
     - name: Download ogp-creater
       run: |
-        curl -sL https://github.com/yutyan0119/ogp-creater/releases/download/ogp-creater -o ogp-creater
+        curl -sL https://github.com/yutyan0119/ogp-creater/releases/latest/download/ogp-creater -o ogp-creater
         chmod +x ogp-creater
 
     - name: Set up Python
