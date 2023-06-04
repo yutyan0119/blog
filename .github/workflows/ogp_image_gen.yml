@@ -35,6 +35,6 @@ jobs:
       run: |
         git config --local user.email "78634880+yutyan0119@users.noreply.github.com"
         git config --local user.name "yutyan0119"
-        git add assets/images/ogp_image/*
+        git add assets/images/ogp_image/* _posts/**/*.md
         git diff --quiet && git diff --staged --quiet || git commit -m "Automatically generated OGP images"
         git push

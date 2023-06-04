@@ -282,12 +282,12 @@ jobs:
       run: |
         git config --local user.email "78634880+yutyan0119@users.noreply.github.com"
         git config --local user.name "yutyan0119"
-        git add assets/images/ogp_image/*
+        git add assets/images/ogp_image/* _posts/**/*.md
         git diff --quiet && git diff --staged --quiet || git commit -m "Automatically generated OGP images"
         git push
 ```
 
-簡単ですね。他の変更点として、最後に`git add .`していたのを、バイナリをcommitしないように、ogp画像のディレクトリに限定するようになりました。また、実行するPythonスクリプトのバイナリへのパスを変更しています。
+簡単ですね。他の変更点として、最後に`git add .`していたのを、バイナリをcommitしないように、ogp画像のディレクトリと変更されたmarkdownに限定するようになりました。また、実行するPythonスクリプトのバイナリへのパスを変更しています。
 
 ## まとめ
 ogp-createrの文字列分割アルゴリズムを変更し、自然なOGP画像が生成されるようになりました。同時に、各種GitHubActionsを変更し、ogp-createrのバイナリをダウンロードして使用するようにしました。これにより、リポジトリにogp-createrのバイナリが不要になった他、ビルドする時間も省けるようになりました。
