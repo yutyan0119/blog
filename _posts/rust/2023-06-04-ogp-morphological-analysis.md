@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [ChatGPT, Rust]
 description: 
-ogp_img: 
+ogp_img: /assets/images/ogp_image/ogp-createrを形態要素解析を使用するようにupdateした.png
 title: ogp-createrを形態要素解析を使用するようにupdateした
 latex: true
 date: 2023-06-04 11:15:00 +0900
