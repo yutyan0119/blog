@@ -10,7 +10,7 @@ MD_PATTERN = r"^---\n(?:.*\n)*?title:\s*(.*?)\n(?:.*\n)*?---"
 def generate_ogp_image(title):
     sanitized_title = title.replace(" ", "-")
     # OGP画像を生成するコマンドを実行
-    ogp_creater_path = os.path.abspath("./ogp-creater/target/release/ogp-creater")
+    ogp_creater_path = os.path.abspath("./ogp-creater")
     subprocess.run([ogp_creater_path, title], cwd=OGP_IMAGES_PATH)
 
     # 生成されたOGP画像のパスを返す

@@ -18,24 +18,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Checkout ogp-creater repository
-      uses: actions/checkout@v2
-      with:
-        repository: yutyan0119/ogp-creater
-        path: ./ogp-creater
-
-    - name: Install Rust
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-        override: true
-        components: rustfmt
-        target: x86_64-unknown-linux-gnu
-
-    - name: Build ogp-creater
+    - name: Download ogp-creater
       run: |
-        cd ./ogp-creater
-        cargo build --release
+        curl -sL https://github.com/yutyan0119/ogp-creater/releases/latest/download/ogp-creater -o ogp-creater
+        chmod +x ogp-creater
 
     - name: Set up Python
       uses: actions/setup-python@v2
