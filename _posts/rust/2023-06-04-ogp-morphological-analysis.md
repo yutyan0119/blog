@@ -183,7 +183,7 @@ fn draw_centered_lines(
 ### バイナリをビルドしてreleaseに配置するようにする
 まずは、バイナリをビルドして、releaseに配置するようにしました。tagがpushされたときに、リポジトリをcheckoutし、ビルドし、releaseを作成し、releaseにバイナリをアップロードするようにしました。以下がそのコードです。
 
-```text
+```yml
 name: Build and Release
 
 on:
@@ -214,6 +214,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
+        {% raw %}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
@@ -231,6 +232,7 @@ jobs:
         asset_path: ./target/release/ogp-creater
         asset_name: ogp-creater
         asset_content_type: application/octet-stream
+        {% endraw %}
 ```
 これで、releaseにバイナリが配置されるようになりました。
 ![releaseのAssetsにバイナリがある](images/ogp-creater-update/image3.png)
@@ -244,7 +246,7 @@ curl -sL https://github.com/yutyan0119/ogp-creater/releases/latest/download/ogp-
 
 これを利用します。
 
-```text
+```yml
 name: OGP Image Generator
 
 on:
