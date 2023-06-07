@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [自作OS, RISC-V]
 description: 
-ogp_img:
+ogp_img: /assets/images/ogp_image/【自作OS】まずは簡単なタスクの生成と切り替えを実装してみた.png
 title: 【自作OS】まずは簡単なタスクの生成と切り替えを実装してみた
 latex: false
 date: 2023-06-07 19:00:00 +0900
