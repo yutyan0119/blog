@@ -4,7 +4,7 @@ author: Yuto Nakamura
 tags: [自作OS, RISC-V]
 description: 
 ogp_img:
-title: RISC-Vにおける.sbss, .sdataとgpレジスタについて
+title: RISC-Vにおける.sbss .sdataとgpレジスタについて
 latex: false
 date: 2023-06-08 19:25:00 +0900
 ---
