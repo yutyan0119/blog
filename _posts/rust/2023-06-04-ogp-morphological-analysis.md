@@ -11,12 +11,16 @@ date: 2023-06-04 11:15:00 +0900
 
 一ヶ月くらい前にこのブログを作ったとほぼ同時に、[OGP画像を自動生成するRustアプリを作った](https://yutyan.dev/ogp-creater-rust)のですが、とある問題が生じました。画像にはその記事のタイトルが表示されるのですが、タイトルが変なところで区切られてしまうのです。
 
+[https://yutyan.dev/ogp-creater-rust](https://yutyan.dev/ogp-creater-rust)
+
 例えば以下の画像だったら、virtは区切らないで欲しいし、サイボウズ・ラボユースは区切らないで欲しいという感じです。
 
 ![単語が区切られてしまっているOGP画像の例1](images/ogp-creater-update/image.png){: width="50%"}
 ![単語が区切られてしまっているOGP画像の例2](images/ogp-creater-update/image2.png){: width="50%"}
 
-これまでのタイトル分割アルゴリズムは、文字列を1列に並べたときに、文字のscaleが70より小さくなるならちょうど文字列の半分で区切って2行に分けた上で配置するというものでした。これでは当然単語が区切られる問題が発生してしまいます。そこで、形態要素解析を利用して、単語の区切れ目を検出するようにしました。実装は例によって[GitHubで公開しています](https://github.com/yutyan0119/ogp-creater)
+これまでのタイトル分割アルゴリズムは、文字列を1列に並べたときに、文字のscaleが70より小さくなるならちょうど文字列の半分で区切って2行に分けた上で配置するというものでした。これでは当然単語が区切られる問題が発生してしまいます。そこで、形態要素解析を利用して、単語の区切れ目を検出するようにしました。実装は例によって[GitHubで公開しています](https://github.com/yutyan0119/ogp-creater)。
+
+[https://github.com/yutyan0119/ogp-creater](https://github.com/yutyan0119/ogp-creater)
 
 最後に、OGP画像を生成するActionsにおいて、バイナリファイルをブログリポジトリに紐付けられたものではなく、ogp-createrの最新のreleaseから取得するように変更しました。これにより、ogp-createrの更新を行ったときに、ブログリポジトリのバイナリ更新を行わなくても、最新のogp-createrを使用することができるようになりました。
 
@@ -297,4 +301,4 @@ ogp-createrの文字列分割アルゴリズムを変更し、自然なOGP画像
 ---
 {: data-content="footnotes"}
 
-[^1]: [Rust初心者がRust製の日本語形態素解析器の開発を引き継いでみた, https://qiita.com/mosuka/items/0fdaaf91f5530d427dc7](https://qiita.com/mosuka/items/0fdaaf91f5530d427dc7)
+[^1]: [https://qiita.com/mosuka/items/0fdaaf91f5530d427dc7](https://qiita.com/mosuka/items/0fdaaf91f5530d427dc7)

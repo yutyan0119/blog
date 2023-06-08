@@ -13,7 +13,8 @@ date: 2023-06-08 00:30:00 +0900
 OSの機能は数しれずですが、タスクの管理はその中でも特に重要な部類に入ると個人的に思っています。
 今回の記事の内容は[このPR](https://github.com/yutyan0119/FlightTrailOS/pull/1)でmainにマージされているので、それも参照しつつ見てください。
 
-[![](https://opengraph.githubassets.com/39be8ae302d7b804fd6389d7c4e34fa927515654f59ca5fc3c4aef81b82a1ef1/yutyan0119/FlightTrailOS/pull/1)](https://github.com/yutyan0119/FlightTrailOS/pull/1)
+<!-- [![](https://opengraph.githubassets.com/39be8ae302d7b804fd6389d7c4e34fa927515654f59ca5fc3c4aef81b82a1ef1/yutyan0119/FlightTrailOS/pull/1)](https://github.com/yutyan0119/FlightTrailOS/pull/1) -->
+[https://github.com/yutyan0119/FlightTrailOS/pull/1](https://github.com/yutyan0119/FlightTrailOS/pull/1)
 
 ## RISC-VのABIについて
 ABIとは、アプリケーションバイナリインターフェイスの略で、関数の呼び出し規約や、データ型の大きさなどを指定しています。基本的に今回作成するOSの範囲内では、lip32dと呼ばれるものを使用します。コンパイラ側でこれを前提にコンパイルされるため、自分でアセンブラを書く際にも、これを考慮しないといけません。
@@ -218,7 +219,9 @@ int main() {
 
 これで、いつもどおりmakeすると、ひたすらtask_1が表示されます。Includeファイルを指定したりする必要があるため、少しだけMakefileに変更が有りますが、このコミットを見ていただければわかります。
 
-[![](https://opengraph.githubassets.com/f9a176d059c55f5a4a39397c51fc5305ffb89c9e78835702ce34c4b7d71f067e/yutyan0119/FlightTrailOS/commit/6b4989d546511fbce24e0cebf91ade2c2e5ceebc)](https://github.com/yutyan0119/FlightTrailOS/commit/6b4989d546511fbce24e0cebf91ade2c2e5ceebc#diff-bafde732323b99ea1ed9054d972a49d03089ad81537e87ac24ca63ac8ad066e9)
+<!-- [![](https://opengraph.githubassets.com/f9a176d059c55f5a4a39397c51fc5305ffb89c9e78835702ce34c4b7d71f067e/yutyan0119/FlightTrailOS/commit/6b4989d546511fbce24e0cebf91ade2c2e5ceebc)](https://github.com/yutyan0119/FlightTrailOS/commit/6b4989d546511fbce24e0cebf91ade2c2e5ceebc#diff-bafde732323b99ea1ed9054d972a49d03089ad81537e87ac24ca63ac8ad066e9) -->
+
+[https://github.com/yutyan0119/FlightTrailOS/commit/6b4989d546511fbce24e0cebf91ade2c2e5ceebc#diff-bafde732323b99ea1ed9054d972a49d03089ad81537e87ac24ca63ac8ad066e9](https://github.com/yutyan0119/FlightTrailOS/commit/6b4989d546511fbce24e0cebf91ade2c2e5ceebc#diff-bafde732323b99ea1ed9054d972a49d03089ad81537e87ac24ca63ac8ad066e9)
 
 ## タスクの切り替え
 タスクを切り替える際には、現在実行しているタスクが持っているレジスタのうち、呼び出された側が保存しなければならないレジスタについてをタスクスタック領域に退避し、逆に切り替わる側のタスクの情報を切り替わる側のタスクのスタックからレジスタに入れることが必要です。また、raの値についてもスタックに保存しておく必要があります。これは、呼び出された側のタスクが終了した際に、呼び出し側のタスクに戻るために必要な情報です。
@@ -317,7 +320,9 @@ int main() {
 }
 ```
 これでtask_1とtask_2が順番に表示されることがわかりました。これだけだと本当にスタック領域が移動されているか分かりづらいので、整数をプリントするようにして、確かにタスクの情報が残っていることを確認するようにしましょう。以下のコミットのようにすれば、整数が変わることがわかります。
-[![](https://opengraph.githubassets.com/256668d55b6c6ebb707a65545e8841ad9aed519f9d9f7007171f8586a546a48d/yutyan0119/FlightTrailOS/commit/333670d5714d87adab598bc0ca7715fbb3420ff6)](https://github.com/yutyan0119/FlightTrailOS/commit/333670d5714d87adab598bc0ca7715fbb3420ff6)
+<!-- [![](https://opengraph.githubassets.com/256668d55b6c6ebb707a65545e8841ad9aed519f9d9f7007171f8586a546a48d/yutyan0119/FlightTrailOS/commit/333670d5714d87adab598bc0ca7715fbb3420ff6)](https://github.com/yutyan0119/FlightTrailOS/commit/333670d5714d87adab598bc0ca7715fbb3420ff6) -->
+
+[https://github.com/yutyan0119/FlightTrailOS/commit/333670d5714d87adab598bc0ca7715fbb3420ff6](https://github.com/yutyan0119/FlightTrailOS/commit/333670d5714d87adab598bc0ca7715fbb3420ff6)
 
 ![](https://pbs.twimg.com/media/FyAiHy8aIAIcLq3?format=png&name=360x360)
 

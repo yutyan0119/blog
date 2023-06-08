@@ -13,6 +13,8 @@ date: 2023-06-01 22:35:00 +0900
 
 <a href="https://www.amazon.co.jp/%E8%87%AA%E4%BD%9COS%E3%81%A7%E5%AD%A6%E3%81%B6%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%AB%E3%83%BC%E3%83%8D%E3%83%AB%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E5%AE%9F%E8%A3%85-%E6%80%92%E7%94%B0%E6%99%9F%E4%B9%9F/dp/4798068713?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2HONPIDEFVA5M&keywords=%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%AB%E3%83%BC%E3%83%8D%E3%83%AB&qid=1685622228&sprefix=%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%AB%E3%83%BC%E3%83%8D%E3%83%AB%2Caps%2C175&sr=8-4&linkCode=li2&tag=yutyan0119-22&linkId=afcffafb202ab4c3198b8456c0ef448a&language=ja_JP&ref_=as_li_ss_il" target="_blank"><img border="0" src="https://gist.githubusercontent.com/nuta/e45864405fbdc8618af4b08de534e42c/raw/bd3df82e7039902818c8fc0d394b69250cc78fc9/cover.jpg" width="200" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=yutyan0119-22&language=ja_JP&l=li2&o=9&a=4798068713" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
+[https://github.com/nuta/microkernel-book](https://github.com/nuta/microkernel-book)
+
 ただ動かすだけでは面白みが無いと思うので、QEMUの勉強を兼ねて、QEMUのビルドからやっていこうと思います。QEMUは、仮想マシンをエミュレートするソフトウェアです。今回は、RISC-Vの仮想マシンをエミュレートするために使用します。
 
 <aside class="msg message">

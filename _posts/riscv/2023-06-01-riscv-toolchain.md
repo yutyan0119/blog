@@ -53,6 +53,8 @@ configureし、makeするというのは、大規模なソフトウェアある�
 
 詳しくは[SiFiveのブログ](https://www.sifive.com/blog/all-aboard-part-1-compiler-args)を見るのが良いと思います。
 
+[https://www.sifive.com/blog/all-aboard-part-1-compiler-args](https://www.sifive.com/blog/all-aboard-part-1-compiler-args)
+
 最後に、PATHを通しておきます。
 
 ```bash
