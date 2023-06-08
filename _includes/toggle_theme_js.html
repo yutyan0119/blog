@@ -28,81 +28,56 @@
     }
   }
 
-  window.onload = function() {
-  // ページ内の全てのaタグを取得
-  const links = document.getElementsByTagName('a');
+//   window.onload = function() {
+//   // ページ内の全てのaタグを取得
+//   const links = document.getElementsByTagName('a');
 
-  Array.from(links).forEach((link) => {
-    // aタグが子要素を持つ場合や、リンクのテキストがURLと異なる場合はスキップ
-    if (link.href !== link.textContent) {
-      return;
-    }
+//   Array.from(links).forEach((link) => {
+//     // aタグが子要素を持つ場合や、リンクのテキストがURLと異なる場合はスキップ
+//     if (link.href !== link.textContent) {
+//       return;
+//     }
 
-    const url = link.href;
+//     const url = link.href;
 
-    // 各URLからOGP情報を取得
-    fetchOgpInfo(url).then((ogpInfo) => {
-      // OGP情報がある場合、リンクを詳細なブロックに置き換え
-      if (ogpInfo) {
-        const container = document.createElement('div');
-        container.classList.add('ogp-container');
+//     // 各URLからOGP情報を取得
+//     fetchOgpInfo(url).then((ogpInfo) => {
+//       // OGP情報がある場合、リンクを詳細なブロックに置き換え
+//       if (ogpInfo) {
+//         const container = document.createElement('div');
+//         container.classList.add('ogp-container');
 
-        const img = document.createElement('img');
-        img.src = ogpInfo.images[0];
+//         const img = document.createElement('img');
+//         img.src = ogpInfo.images[0];
 
-        const title = document.createElement('div');
-        title.textContent = ogpInfo.title;
+//         const title = document.createElement('div');
+//         title.textContent = ogpInfo.title;
 
-        container.appendChild(img);
-        container.appendChild(title);
+//         container.appendChild(img);
+//         container.appendChild(title);
 
-        const linkContainer = document.createElement('a');
-        linkContainer.href = ogpInfo.url;
-        linkContainer.appendChild(container);
+//         const linkContainer = document.createElement('a');
+//         linkContainer.href = ogpInfo.url;
+//         linkContainer.appendChild(container);
 
-        link.replaceWith(linkContainer);
-      }
-    });
-  });
-}
+//         link.replaceWith(linkContainer);
+//       }
+//     });
+//   });
+// }
 
-function fetchOgpInfo(url) {
-  return fetch(`https://jsonlink.io/api/extract?url=${encodeURIComponent(url)}`)
-    .then(response => response.json())
-    .then((data) => {
-      if (data && data.images && data.images.length > 0) {
-        return data;
-      }
-      return null;
-    })
-    .catch(err => {
-      console.error('Error:', err);
-    });
-}
+// function fetchOgpInfo(url) {
+//   return fetch(`https://jsonlink.io/api/extract?url=${encodeURIComponent(url)}`)
+//     .then(response => response.json())
+//     .then((data) => {
+//       if (data && data.images && data.images.length > 0) {
+//         return data;
+//       }
+//       return null;
+//     })
+//     .catch(err => {
+//       console.error('Error:', err);
+//     });
+// }
 
 </script>
-
-<style>
-.ogp-container {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: start;
-  justify-content: normal; /* 変更 */
-}
-
-.ogp-container img {
-  width: 100%;
-  max-width: 33%;
-  height: auto;
-  margin-right: 10px;
-  flex-shrink: 0; /* 追加 */
-}
-
-.ogp-container div {
-  margin: 0;
-  flex-grow: 1; /* 追加 */
-}
-
-</style>

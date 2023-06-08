@@ -1,0 +1,21 @@
+.ogp-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: normal; /* 変更 */
+  }
+  
+  .ogp-container img {
+    width: 100%;
+    max-width: 33%;
+    height: auto;
+    margin-right: 10px;
+    flex-shrink: 0; /* 追加 */
+  }
+  
+  .ogp-container div {
+    margin: 0;
+    flex-grow: 1; /* 追加 */
+  }
