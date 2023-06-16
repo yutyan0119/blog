@@ -3,7 +3,7 @@ layout: post
 author: Yuto Nakamura
 tags: [Blog, VLSI symposium]
 description: 
-ogp_img:
+ogp_img: /assets/images/ogp_image/Symposium-on-VLSI-Technology-and-Circuits参加記.png
 title: Symposium on VLSI Technology and Circuits参加記
 latex: false
 date: 2023-06-16 19:00:00 +0900
