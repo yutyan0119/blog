@@ -29,16 +29,16 @@ date: 2023-06-08 19:25:00 +0900
 
 ```c
 void clear_bss() {
-    extern unsigned int* __bss_start, __bss_end;
-    unsigned int start = (unsigned int)__bss_start;
-    unsigned int end = (unsigned int)__bss_end;
+    extern unsigned int __bss_start, __bss_end;
+    unsigned int* start = &__bss_start;
+    unsigned int* end = &__bss_end;
     while (start < end) {
-        *(unsigned int*)start = 0;
+        *start = 0;
         start ++;
     }
 }
 ```
-このうち、`__bss_start`、`__bss_end`はリンカスクリプトで定義されているシンボルです。これらは、それぞれ、`.bss`セクションの先頭、終端を指しています。
+このうち、`__bss_start`、`__bss_end`はリンカスクリプトで定義されているシンボルです。これらは、それぞれ、`.bss`セクションの先頭、終端の32bitを指しています。
 `extern`キーワードを使用することで、このファイル内に定義がなくとも、リンカスクリプトで定義されているシンボルを使用することができます。
 
 ```text
