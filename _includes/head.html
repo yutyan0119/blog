@@ -5,29 +5,31 @@
 
   <title>
     {% if page.title %}
-      {{ page.title }}
+    {{ page.title }}
     {% else %}
-      {{ site.title }}
+    {{ site.title }}
     {% endif %}
   </title>
 
 
-<meta property="og:title" content="{{ page.title | default: site.title | escape }}" />
-<meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}" />
-<meta property="og:image" content="{{ site.url }}{{ page.ogp_img | default: '/assets/images/favicon/mylogo.png' }}" />
-<meta property="og:site_name" content="{{ site.title | escape }}" />
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{% assign excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% if excerpt == '' %}{{ site.description }}{% else %}{{ excerpt }}{% endif %}{% endif %}" />
-<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace: '/index.html','/' }}" />
-<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+  <meta property="og:title" content="{{ page.title | default: site.title | escape }}" />
+  <meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}" />
+  <meta property="og:image" content="{{ site.url }}{{ page.ogp_img | default: '/assets/images/favicon/mylogo.png' }}" />
+  <meta property="og:site_name" content="{{ site.title | escape }}" />
+  <meta property="og:description"
+    content="{% if page.description %}{{ page.description }}{% else %}{% assign excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% if excerpt == '' %}{{ site.description }}{% else %}{{ excerpt }}{% endif %}{% endif %}" />
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace: '/index.html','/' }}" />
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
 
-<!-- Twitter data -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@yutyan_ut">
-<meta name="twitter:creator" content="@yutyan_ut">
-<meta name="twitter:image" content="{{ site.url }}{{ page.ogp_img | default: '/assets/images/favicon/mylogo.png' }}">
-<meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{% assign excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% if excerpt == '' %}{{ site.description }}{% else %}{{ excerpt }}{% endif %}{% endif %}">
-<!-- End: Twitter data -->
+  <!-- Twitter data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@yutyan_ut">
+  <meta name="twitter:creator" content="@yutyan_ut">
+  <meta name="twitter:image" content="{{ site.url }}{{ page.ogp_img | default: '/assets/images/favicon/mylogo.png' }}">
+  <meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+  <meta name="twitter:description"
+    content="{% if page.description %}{{ page.description }}{% else %}{% assign excerpt = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% if excerpt == '' %}{{ site.description }}{% else %}{{ excerpt }}{% endif %}{% endif %}">
+  <!-- End: Twitter data -->
 
   <!-- Favicon -->
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/favicon.ico">
@@ -41,9 +43,19 @@
   <meta name="theme-color" content="#ffffff"> -->
   <!-- Favicon -->
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-23FTT871PB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-23FTT871PB');
+  </script>
+
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
   {% if site.theme_config.appearance_toggle %}
-    {% include toggle_theme_js.html %}
+  {% include toggle_theme_js.html %}
   {% endif %}
 
   {%- include custom_head.html -%}
